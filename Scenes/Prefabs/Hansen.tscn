@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://eavkkkd5ko86"]
+
+[ext_resource type="Script" uid="uid://d24iio45qkisd" path="res://Scripts/Hansen.gd" id="1_egj0c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_do5rv"]
+
+[node name="Hansen" type="CharacterBody2D" unique_id=1353026472]
+script = ExtResource("1_egj0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=912969918]
+shape = SubResource("CapsuleShape2D_do5rv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=741721910]
+offset_left = -27.0
+offset_top = -96.0
+offset_right = 27.0

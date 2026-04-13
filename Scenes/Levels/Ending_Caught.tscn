@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dycpe6ewyta3j"]
+
+[ext_resource type="Script" uid="uid://cbte04ar1s5b1" path="res://Scripts/Button.gd" id="1_ws8e3"]
+
+[node name="Ending_Caught" type="CanvasLayer" unique_id=954612611]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=406755874]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1355393304]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1619363375]
+layout_mode = 2
+text = "Kamu berhasil kabur.
+
+Robert Hansen (1939-2014) membunuh
+setidaknya 17 korban di Alaska.
+Hanya satu yang berhasil kabur dan
+melaporkannya ke polisi."
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1320718910]
+layout_mode = 2
+text = "Coba Lagi"
+script = ExtResource("1_ws8e3")
