@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cu10emri3hy7e"
+path="res://.godot/imported/female breath.mp3-edf13b334f1f7a1e4fcace3d62c8ba81.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/FX/female breath.mp3"
+dest_files=["res://.godot/imported/female breath.mp3-edf13b334f1f7a1e4fcace3d62c8ba81.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpujjhn84jsu3"
+path="res://.godot/imported/Sound Effect Footsteps On Deep Snow (slow) - Robert.mp3-5619fda62e3e09a632ac03df84e403d5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/FX/Sound Effect Footsteps On Deep Snow (slow) - Robert.mp3"
+dest_files=["res://.godot/imported/Sound Effect Footsteps On Deep Snow (slow) - Robert.mp3-5619fda62e3e09a632ac03df84e403d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

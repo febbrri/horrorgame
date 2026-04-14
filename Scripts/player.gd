@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export_category("Player Properties")
 @export var move_speed : float = 400
 @export var jump_force : float = 650
-@export var gravity : float = 1800.0  # dinaikkan karena sekarang pakai delta
+@export var gravity : float = 1800.0
 @export var max_jump_count : int = 2
 var jump_count : int = 2
 
@@ -13,6 +13,17 @@ var jump_count : int = 2
 var is_grounded : bool = false
 var movement_enabled : bool = true
 var noise_level : float = 0.0
+
+# ─── TERRAIN & FOOTSTEP ──────────────────────────────────────────────────────
+# Set dari TerrainZone.gd (Area2D) di level. Default: salju.
+var on_snow: bool = true
+
+var _step_timer: float = 0.0
+const WALK_STEP_INTERVAL := 0.45   # detik antar langkah saat jalan
+const RUN_STEP_INTERVAL  := 0.27   # detik antar langkah saat lari
+const RUN_THRESHOLD      := 280.0  # velocity.x minimal untuk dianggap "lari"
+
+# ─────────────────────────────────────────────────────────────────────────────
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var spawn_point = %SpawnPoint
@@ -31,7 +42,7 @@ func _process(_delta):
 
 func movement(delta):
 	if !is_on_floor():
-		velocity.y += gravity * delta  # FIX: pakai delta
+		velocity.y += gravity * delta
 	elif is_on_floor():
 		jump_count = max_jump_count
 
@@ -43,12 +54,29 @@ func movement(delta):
 	velocity.x = inputAxis * move_speed
 	move_and_slide()
 
-	# Noise system
+	# ─── Noise system ──────────────────────────────────────────────
 	if abs(inputAxis) > 0:
 		noise_level += 0.015
 	else:
 		noise_level -= 0.025
 	noise_level = clamp(noise_level, 0.0, 1.0)
+
+	# ─── Footstep system ───────────────────────────────────────────
+	_update_footstep(delta, inputAxis)
+
+func _update_footstep(delta: float, inputAxis: float) -> void:
+	# Hanya play footstep saat di lantai dan bergerak
+	if not is_on_floor() or abs(inputAxis) < 0.1:
+		_step_timer = 0.0
+		return
+
+	var is_running: bool = abs(velocity.x) >= RUN_THRESHOLD
+	var interval   := RUN_STEP_INTERVAL if is_running else WALK_STEP_INTERVAL
+
+	_step_timer -= delta
+	if _step_timer <= 0.0:
+		_step_timer = interval
+		AudioManager.play_footstep(on_snow, is_running)
 
 func handle_jumping():
 	if Input.is_action_just_pressed("Jump") and movement_enabled:

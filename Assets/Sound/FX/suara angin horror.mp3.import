@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://62um51ljod76"
+path="res://.godot/imported/suara angin horror.mp3-9182197cd1fb00bba8ba9fea682d4929.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/FX/suara angin horror.mp3"
+dest_files=["res://.godot/imported/suara angin horror.mp3-9182197cd1fb00bba8ba9fea682d4929.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
