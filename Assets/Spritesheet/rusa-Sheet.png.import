@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhbguxknacad0"
-path="res://.godot/imported/rusa-Sheet.png-11b4750d5fa6a12bdcf07a9bb880e166.ctex"
+uid="uid://cer58comadl7g"
+path="res://.godot/imported/rusa-Sheet.png-53f457723375730dbf2e7e08a1c92b4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Spritesheet/rusa-Sheet.png"
-dest_files=["res://.godot/imported/rusa-Sheet.png-11b4750d5fa6a12bdcf07a9bb880e166.ctex"]
+source_file="res://Assets/Spritesheet/Spritesheet/rusa-Sheet.png"
+dest_files=["res://.godot/imported/rusa-Sheet.png-53f457723375730dbf2e7e08a1c92b4a.ctex"]
 
 [params]
 
